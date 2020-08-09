@@ -1,0 +1,128 @@
+
+/* Design for all pages */
+
+html,body{
+    height: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-family: 'Baloo Da 2','Sriracha', cursive, 'Rubik', sans-serif;
+}
+
+#landing_page, #selection_page, #game_page{
+    display: none;
+}
+
+h1{
+    font-size: 100px;
+    margin: 0;
+    line-height: 100px;
+    color: rgb(94, 92, 92);
+}
+
+h3{
+    font-size: 40px;
+    font-weight: 500;
+    margin: 0;
+    color: rgb(94, 92, 92);
+}
+
+button{
+    font-family: 'Baloo Da 2','Sriracha', cursive, 'Rubik', sans-serif;
+    cursor: pointer;
+    outline: none;
+}
+
+
+/* Design for the language page */
+
+#p_language_page{
+    font-size: 35px;
+    margin: 0;
+    color: rgb(94, 92, 92);
+}
+
+.language_button{
+    width: 130px;
+    height: 40px;
+    border-radius: 50px;
+    margin: 20px;
+    border: 2px solid rgb(5, 5, 160);
+    background-color: rgb(129, 129, 243);
+    color: white;
+    font-size: 18px;
+}
+.language_button:hover{
+    background-color: rgba(110, 110, 245, 0.705);
+    transition: 0.5s;
+}
+.language_button:active{
+    background-color: rgb(110, 110, 245);
+    transition: none;
+}
+
+#Lets_go_button{
+    width: 300px;
+    height: 40px;
+    border-radius: 50px;
+    border: 2px solid rgb(5, 5, 160);
+    background-color: rgb(110, 110, 245);
+
+    color: white;
+    font-size: 18px;
+}
+#Lets_go_button:hover{
+    background-color: rgba(110, 110, 245, 0.705);
+    transition: 0.5s;
+}
+#Lets_go_button:active{
+    background-color: rgb(110, 110, 245);
+    transition: none;
+}
+
+
+
+/* Makes the game responsive */
+
+@media (max-width: 500px){
+
+    body{
+        padding: 20px;
+        min-width: 300px;
+    }
+
+    h1{
+        font-size: 65px;
+        line-height: 65px;
+        padding-bottom: 40px;
+    }
+
+    h3{
+        font-size: 27px;
+        line-height: 30px;
+        padding: 20px;
+    }
+
+    #p_language_page{
+        font-size: 20px;
+        padding-bottom: 20px;
+    }
+
+    .language_button{
+        margin: 10px;
+        width: 125px;
+    }
+
+    #Lets_go_button{
+        width: 275px;
+    }
+
+}
+
+
+
+
+

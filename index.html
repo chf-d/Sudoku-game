@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Sudoku game</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- First page - language selection -->
+    <div id="language_page">
+
+        <h1 id="h1_language_page">Welcome!</h1>
+
+        <h3 id="h3_language_page">Want to play sudoku ?</h3>
+
+        <p id="p_language_page">Choose your language</p>
+
+        <button class="language_button" onclick="playing_in_english()">English</button>
+        <button class="language_button" onclick="playing_in_hebrew()">עברית</button><br>
+        <button id="Lets_go_button" onclick="landing_page()">Lets go</button>
+
+    </div>
+
+    <!-- Second page - entrance  -->
+    <div id="landing_page">
+
+    </div>
+
+    <!-- Third page - choosing a difficulty level -->
+    <div id="selection_page"></div>
+
+    <!-- Fourth page - the game -->
+    <div id="game_page"></div>
+
+    <script src='script.js'></script>
+</body>
+
+</html>
