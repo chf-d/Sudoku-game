@@ -12,19 +12,27 @@ html,body{
     font-family: 'Baloo Da 2','Sriracha', cursive, 'Rubik', sans-serif;
 }
 
-#landing_page, #selection_page, #game_page{
+
+body{
+    background-image: url('background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#selection_page, #game_page{
     display: none;
 }
 
 h1{
-    font-size: 100px;
+    font-size: 130px;
     margin: 0;
-    line-height: 100px;
+    line-height: 130px;
     color: rgb(94, 92, 92);
 }
 
 h3{
-    font-size: 40px;
+    font-size: 50px;
     font-weight: 500;
     margin: 0;
     color: rgb(94, 92, 92);
@@ -36,16 +44,14 @@ button{
     outline: none;
 }
 
-
-/* Design for the language page */
-
-#p_language_page{
-    font-size: 35px;
-    margin: 0;
-    color: rgb(94, 92, 92);
+input{
+    outline: none;
 }
 
-.language_button{
+
+/* Design for the landing page */
+
+/* .language_button{
     width: 130px;
     height: 40px;
     border-radius: 50px;
@@ -62,17 +68,43 @@ button{
 .language_button:active{
     background-color: rgb(110, 110, 245);
     transition: none;
+} */
+
+#main_div_username_and_password{
+    padding-top: 20px;
+    width: 350px;
+    margin: auto;
+}
+
+.div_username_and_password{
+    background-color: rgb(224, 219, 219);
+    border-radius: 10px;
+    width: 220px;
+    margin-bottom: 5px;
+    color: rgb(102, 101, 101);
+}
+
+.input_username_and_password{
+    border: 1px solid rgba(110, 110, 245, 0.712);
+    border-radius: 10px;
+    width: 350px;
+    height: 30px;
+    margin-bottom: 20px;
+    padding-left: 5px;
+    background-color: rgba(255, 253, 253, 0.486);
+}
+.input_username_and_password:hover{
+    background-color: rgba(5, 5, 146, 0.075);
 }
 
 #Lets_go_button{
-    width: 300px;
-    height: 40px;
-    border-radius: 50px;
-    border: 2px solid rgb(5, 5, 160);
+    width: 360px;
+    height: 38px;
+    border-radius: 10px;
+    border: 1px solid rgb(5, 5, 160);
     background-color: rgb(110, 110, 245);
-
     color: white;
-    font-size: 18px;
+    font-size: 22px;
 }
 #Lets_go_button:hover{
     background-color: rgba(110, 110, 245, 0.705);
@@ -90,7 +122,7 @@ button{
 @media (max-width: 500px){
 
     body{
-        padding: 20px;
+        padding: 10px;
         min-width: 300px;
     }
 
@@ -106,18 +138,27 @@ button{
         padding: 20px;
     }
 
-    #p_language_page{
-        font-size: 20px;
-        padding-bottom: 20px;
-    }
-
-    .language_button{
+    /* .language_button{
         margin: 10px;
         width: 125px;
+    } */
+
+    #main_div_username_and_password{
+        width: 250px;
+    }
+
+    .div_username_and_password{
+        width: 175px;
+        font-size: 14px;
+        border-radius: 7px;
+    }
+
+    .input_username_and_password{
+        width: 245px;
     }
 
     #Lets_go_button{
-        width: 275px;
+        width: 245px;
     }
 
 }

@@ -10,36 +10,36 @@
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
+    <!-- <button class="language_button" onclick="playing_in_english()">English</button>
+     <button class="language_button" onclick="playing_in_hebrew()">עברית</button> -->
 
-    <!-- First page - language selection -->
-    <div id="language_page">
-
-        <h1 id="h1_language_page">Welcome!</h1>
-
-        <h3 id="h3_language_page">Want to play sudoku ?</h3>
-
-        <p id="p_language_page">Choose your language</p>
-
-        <button class="language_button" onclick="playing_in_english()">English</button>
-        <button class="language_button" onclick="playing_in_hebrew()">עברית</button><br>
-        <button id="Lets_go_button" onclick="landing_page()">Lets go</button>
-
-    </div>
-
-    <!-- Second page - entrance  -->
+    <!-- First page - entrance  -->
     <div id="landing_page">
 
+        <h1 id="h1_landing_page">Welcome!</h1>
+
+        <h3 id="h3_landing_page">Want to play sudoku ?</h3>
+        <div id="main_div_username_and_password">
+            <div class="div_username_and_password">Please enter your username</div>
+            <input type="text" id="username" class="input_username_and_password" placeholder="username">
+
+            <div class="div_username_and_password">Please enter your password</div>
+            <input type="password" id="password" class="input_username_and_password" placeholder="password">
+        </div>
+
+        <button id="Lets_go_button" onclick="landing_page()">Let's go</button>
+
     </div>
 
-    <!-- Third page - choosing a difficulty level -->
+    <!-- Second page - choosing a difficulty level -->
     <div id="selection_page"></div>
 
-    <!-- Fourth page - the game -->
+    <!-- Third page - the game -->
     <div id="game_page"></div>
 
     <script src='script.js'></script>

@@ -5,7 +5,7 @@ function playing_in_english() {
     document.getElementById('h1_language_page').innerHTML = 'Welcome!';
     document.getElementById('h3_language_page').innerHTML = 'Want to play sudoku ?';
     document.getElementById('p_language_page').innerHTML = 'Choose your language';
-    document.getElementById('Lets_go_button').innerHTML = 'Lets go';
+    document.getElementById('Lets_go_button').innerHTML = "Let's go";
 }
 
 // Makes the game in Hebrew
@@ -16,8 +16,8 @@ function playing_in_hebrew() {
     document.getElementById('Lets_go_button').innerHTML = 'בא נתחיל';
 }
 
-// Moves to the login page
+// Moves to the selection page
 function landing_page() {
-    document.getElementById('language_page').style.display = 'none';
-    document.getElementById('landing_page').style.display = 'grid';
+    document.getElementById('landing_page').style.display = 'none';
+    document.getElementById('selection_page').style.display = 'block';
 }
