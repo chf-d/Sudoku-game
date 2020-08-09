@@ -25,9 +25,16 @@ body{
 }
 
 h1{
-    font-size: 130px;
+    font-size: 120px;
     margin: 0;
-    line-height: 130px;
+    line-height: 120px;
+    color: rgb(94, 92, 92);
+}
+
+h2{
+    font-size: 80px;
+    margin: 0;
+    line-height: 80px;
     color: rgb(94, 92, 92);
 }
 
@@ -51,25 +58,6 @@ input{
 
 /* Design for the landing page */
 
-/* .language_button{
-    width: 130px;
-    height: 40px;
-    border-radius: 50px;
-    margin: 20px;
-    border: 2px solid rgb(5, 5, 160);
-    background-color: rgb(129, 129, 243);
-    color: white;
-    font-size: 18px;
-}
-.language_button:hover{
-    background-color: rgba(110, 110, 245, 0.705);
-    transition: 0.5s;
-}
-.language_button:active{
-    background-color: rgb(110, 110, 245);
-    transition: none;
-} */
-
 #main_div_username_and_password{
     padding-top: 20px;
     width: 350px;
@@ -84,18 +72,30 @@ input{
     color: rgb(102, 101, 101);
 }
 
+#div_password{
+    margin-top: 20px;
+}
+
 .input_username_and_password{
     border: 1px solid rgba(110, 110, 245, 0.712);
     border-radius: 10px;
     width: 350px;
     height: 30px;
-    margin-bottom: 20px;
     padding-left: 5px;
+    padding-right: 5px;
     background-color: rgba(255, 253, 253, 0.486);
 }
 .input_username_and_password:hover{
     background-color: rgba(5, 5, 146, 0.075);
 }
+
+#username_error,#password_error{
+    color: red;
+    font-size: 14px;
+    height: 17px;
+    text-align: left;
+}
+
 
 #Lets_go_button{
     width: 360px;
@@ -105,6 +105,7 @@ input{
     background-color: rgb(110, 110, 245);
     color: white;
     font-size: 22px;
+    margin-top: 20px;
 }
 #Lets_go_button:hover{
     background-color: rgba(110, 110, 245, 0.705);
@@ -115,7 +116,43 @@ input{
     transition: none;
 }
 
+#language_div{
+    width: 300px;
+    height: 30px;
+    margin: auto;
+    margin-top: 60px;
+    color: rgb(94, 92, 92);
+    cursor: pointer;
+    position: relative;
+}
 
+#language_buttons{
+    position: absolute;
+    top: -40px;
+    height: 65px;
+    width: 300px;
+    display: none;
+}
+
+.language_button{
+    width: 130px;
+    height: 35px;
+    border-radius: 10px;
+    border: 1px solid rgb(5, 5, 160);
+    background-color: rgb(110, 110, 245);
+    color: white;
+    font-size: 18px;
+    margin-left: 7px;
+    margin-right: 7px;
+}
+.language_button:hover{
+    background-color: rgba(110, 110, 245, 0.705);
+    transition: 0.5s;
+}
+.language_button:active{
+    background-color: rgb(110, 110, 245);
+    transition: none;
+}
 
 /* Makes the game responsive */
 
@@ -128,27 +165,22 @@ input{
 
     h1{
         font-size: 65px;
-        line-height: 65px;
+        line-height: 55px;
         padding-bottom: 40px;
     }
 
     h3{
         font-size: 27px;
-        line-height: 30px;
+        line-height: 27px;
         padding: 20px;
     }
-
-    /* .language_button{
-        margin: 10px;
-        width: 125px;
-    } */
 
     #main_div_username_and_password{
         width: 250px;
     }
 
     .div_username_and_password{
-        width: 175px;
+        width: 185px;
         font-size: 14px;
         border-radius: 7px;
     }
