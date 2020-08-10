@@ -15,10 +15,15 @@ html,body{
 
 body{
     background-image: url('background.jpg');
-    background-position: center;
+    background-position: center ;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
+
+/* #landing_page, #game_page{
+    display: none;
+} */
 
 #selection_page, #game_page{
     display: none;
@@ -87,6 +92,7 @@ input{
 }
 .input_username_and_password:hover{
     background-color: rgba(5, 5, 146, 0.075);
+    /* border: 1px solid rgb(5, 5, 160); */
 }
 
 #username_error,#password_error{
@@ -154,19 +160,70 @@ input{
     transition: none;
 }
 
+
+/* Design for the selection page  */
+
+#p_in_selection_page{
+    font-size: 30px;
+    font-weight: 500;
+    margin: 0;
+    color: rgb(94, 92, 92);
+    word-spacing: 4px;
+}
+
+.selection_div{
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    background-color: rgba(94, 92, 92, 0.185);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.buttons_Explanation{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+    color: rgb(94, 92, 92);
+}
+
+.selection_buttons{
+    width: 150px;
+    height: 50px;
+    margin-top: 20px;
+    border: 2px solid rgba(110, 110, 245, 0.712);
+    background-color: rgba(255, 255, 255, 0.473);
+}
+.selection_buttons:hover{
+    background-color: rgb(110, 110, 245);
+    color: white;
+    transition: 0.4s;
+}
+.selection_buttons:active{
+    background-color: rgb(48, 48, 241);
+    transition: none;
+}
+
+
+
+
 /* Makes the game responsive */
 
 @media (max-width: 500px){
 
+    /* Design for all pages */
+
     body{
         padding: 10px;
+        padding-top: 30px;
         min-width: 300px;
     }
 
     h1{
         font-size: 65px;
         line-height: 55px;
-        padding-bottom: 40px;
+        padding-bottom: 20px;
     }
 
     h3{
@@ -174,6 +231,8 @@ input{
         line-height: 27px;
         padding: 20px;
     }
+
+    /* Design for the landing page */
 
     #main_div_username_and_password{
         width: 250px;
@@ -191,6 +250,34 @@ input{
 
     #Lets_go_button{
         width: 245px;
+    }
+
+    /* Design for the selection page  */
+
+    #p_in_selection_page{
+        font-size: 18px;
+    }
+
+    .selection_div{
+        width: 280px;
+        height: 80px;
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
+
+    .buttons_Explanation_header{
+        font-size: 22px;
+        padding: 0;
+    }
+
+    .buttons_Explanation{
+        font-size: 12px;
+    }
+
+    .selection_buttons{
+        width: 150px;
+        height: 30px;
+        margin-top: 3px;
     }
 
 }
