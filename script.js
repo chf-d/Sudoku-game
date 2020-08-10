@@ -12,7 +12,9 @@ function playing_in_english() {
     document.getElementById('h3_landing_page').innerHTML = 'Want to play sudoku ?';
     document.getElementById('main_div_username_and_password').style.direction = 'ltr';
     document.getElementById('div_username').innerHTML = 'Please enter your username';
+    document.getElementById('username').placeholder = 'username';
     document.getElementById('div_password').innerHTML = 'Please enter your password';
+    document.getElementById('password').placeholder = 'password';
     document.getElementById('Lets_go_button').innerHTML = "Let's go";
 
     // Second page
@@ -32,8 +34,9 @@ function playing_in_hebrew() {
     document.getElementById('h3_landing_page').innerHTML = '? רוצה לשחק סודוקו';
     document.getElementById('main_div_username_and_password').style.direction = 'rtl';
     document.getElementById('div_username').innerHTML = 'נא הקלד את שם המשתמש שלך';
-    // document.getElementById('username').style.placeItems = 'שם משתמש';
+    document.getElementById('username').placeholder = 'שם משתמש';
     document.getElementById('div_password').innerHTML = 'נא הקלד את הסיסמה שלך';
+    document.getElementById('password').placeholder = 'סיסמה';
     document.getElementById('Lets_go_button').innerHTML = 'בוא נתחיל';
 
     // Second page
