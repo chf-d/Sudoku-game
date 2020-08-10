@@ -7,20 +7,25 @@ let eng_or_heb = 'eng';
 function playing_in_english() {
 
     eng_or_heb = 'eng';
+    location.reload()
     // First page
-    document.getElementById('h1_landing_page').innerHTML = 'Welcome!';
-    document.getElementById('h3_landing_page').innerHTML = 'Want to play sudoku ?';
-    document.getElementById('main_div_username_and_password').style.direction = 'ltr';
-    document.getElementById('div_username').innerHTML = 'Please enter your username';
-    document.getElementById('username').placeholder = 'username';
-    document.getElementById('div_password').innerHTML = 'Please enter your password';
-    document.getElementById('password').placeholder = 'password';
-    document.getElementById('Lets_go_button').innerHTML = "Let's go";
+    // document.getElementById('h1_landing_page').innerHTML = 'Welcome!';
+    // document.getElementById('h3_landing_page').innerHTML = 'Want to play sudoku ?';
+    // document.getElementById('main_div_username_and_password').style.direction = 'ltr';
+    // document.getElementById('div_username').innerHTML = 'Please enter your username';
+    // document.getElementById('username').placeholder = 'username';
+    // document.getElementById('div_password').innerHTML = 'Please enter your password';
+    // document.getElementById('password').placeholder = 'password';
+    // document.getElementById('Lets_go_button').innerHTML = "Let's go";
 
-    // Second page
-    document.getElementById('h2_in_selection_page').innerHTML = 'hi';
-    document.getElementById('h2_in_selection_page').style.direction = 'ltr';
-    document.getElementById('h3_in_selection_page').innerHTML = 'good to see you';
+    // // Second page
+    // document.getElementById('h2_in_selection_page').innerHTML = 'hi';
+    // document.getElementById('selection_page').style.direction = 'ltr';
+    // document.getElementById('h3_in_selection_page').innerHTML = 'good to see you';
+    // document.getElementById('p_in_selection_page').innerHTML = 'Please select the difficulty level you want to play';
+    // document.getElementById('easy_header').innerHTML = 'easy';
+    // document.getElementById('normal_header').innerHTML = 'normal';
+    // document.getElementById('Hard_header').innerHTML = 'קשה';
 
 
 }
@@ -41,8 +46,19 @@ function playing_in_hebrew() {
 
     // Second page
     document.getElementById('h2_in_selection_page').innerHTML = 'היי';
-    document.getElementById('h2_in_selection_page').style.direction = 'rtl';
+    document.getElementById('selection_page').style.direction = 'rtl';
     document.getElementById('h3_in_selection_page').innerHTML = 'טוב לראות אותך';
+    document.getElementById('p_in_selection_page').innerHTML = 'בחר את רמת הקושי שאתה רוצה לשחק';
+    document.getElementById('easy_header').innerHTML = 'קל';
+    document.getElementById('easy_Explanation').innerHTML = 'תקבל סודוקו שצריך לפתור 25%';
+    document.getElementById('easy_button').innerHTML = 'משחק קל';
+    document.getElementById('normal_header').innerHTML = 'בינוני';
+    document.getElementById('normal_Explanation').innerHTML = 'תקבל סודוקו שצריך לפתור 50%';
+    document.getElementById('normal_button').innerHTML = 'משחק בינוני';
+    document.getElementById('Hard_header').innerHTML = 'קשה';
+    document.getElementById('Hard_Explanation').innerHTML = 'תקבל סודוקו שצריך לפתור 75%';
+    document.getElementById('Hard_button').innerHTML = 'משחק קשה';
+
 
 
 }
