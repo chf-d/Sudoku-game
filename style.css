@@ -21,7 +21,8 @@ body{
     background-attachment: fixed;
 }
 
-/* #selection_page{
+/* #selection_page, */
+/* #landing_page{
     display: none;
 } */
 
@@ -275,7 +276,7 @@ td{
 
 #hint_div{
     display: inline-block;
-    width: 180px;
+    width: 182px;
     height: 200px;
     background-color: rgba(94, 92, 92, 0.185);
     padding: 5px;
@@ -292,8 +293,9 @@ td{
     padding: 0;     
 }
 
-#hint_Explanation, #mobyle_hint_Explanation{
+#hint_Explanation, #mobyle_hint_Explanation ,#hint_left_p ,#mobyle_left_p{
     font-size: 16px;
+    line-height: 20px;
     font-weight: 400;
     margin: 0;
     color: rgb(94, 92, 92);
@@ -303,11 +305,20 @@ td{
     width: 140px;
     height: 30px;
     margin-top: 10px;
+    margin-bottom: 7px;
+}
+
+#hint_span,#hint_left_span,#mobyle_hint_span,#mobyle_left_span{
+    color: rgb(82, 79, 79);
+    font-weight: 600;
 }
 
 #mobyle_hint_div{
     display: none;
 }
+
+
+
 
 
 /* Makes the game responsive */
@@ -408,7 +419,7 @@ td{
     #mobyle_hint_div{
         display: inline-block;
         width: 300px;
-        height: 120px;
+        height: 125px;
         background-color: rgba(94, 92, 92, 0.185);
         padding: 5px;
         border-radius: 10px;
@@ -421,10 +432,12 @@ td{
 
     #mobyle_hint_Explanation{
         display: inline-block;
+        line-height: 18px;
     }
 
     #mobyle_hint_button{
-        height: 20;
+        height: 14;
+        width: 200px;
         padding: 0;
         margin-top: 3px;
     }

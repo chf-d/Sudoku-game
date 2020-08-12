@@ -54,20 +54,20 @@
 
         <div class="selection_div">
             <h3 class="buttons_Explanation_header" id="easy_header">easy</h3>
-            <p class="buttons_Explanation" id="easy_Explanation">You will get a sudoku that needs to be resolved 25%</p>
-            <button class="selection_buttons" id="easy_button" onclick="selection_page()">easy game</button>
+            <p class="buttons_Explanation" id="easy_Explanation">You will get a sudoku that needs to be resolved 35%</p>
+            <button class="selection_buttons" id="easy_button" onclick="Delete_sudoku(30)">easy game</button>
         </div>
 
         <div class="selection_div">
             <h3 class="buttons_Explanation_header" id="normal_header">normal</h3>
             <p class="buttons_Explanation" id="normal_Explanation">You will get a sudoku that needs to be resolved 50%</p>
-            <button class="selection_buttons" id="normal_button" onclick="selection_page()">normal game</button>
+            <button class="selection_buttons" id="normal_button" onclick="Delete_sudoku(40)">normal game</button>
         </div>
 
         <div class="selection_div">
             <h3 class="buttons_Explanation_header" id="Hard_header">hard</h3>
-            <p class="buttons_Explanation" id="Hard_Explanation">You will get a sudoku that needs to be resolved 75%</p>
-            <button class="selection_buttons" id="Hard_button" onclick="selection_page()">Hard game</button>
+            <p class="buttons_Explanation" id="Hard_Explanation">You will get a sudoku that needs to be resolved 65%</p>
+            <button class="selection_buttons" id="Hard_button" onclick="Delete_sudoku(50)">Hard game</button>
         </div>
 
     </div>
@@ -184,15 +184,17 @@
         </div>
 
         <div id="hint_div">
-            <h3 id="hint_header">Stuck? <br> Get a hint!</h3>
-            <p id="hint_Explanation">Do not rush to use it.<br>You can use it only 5 times throughout the game.</p>
-            <button id="hint_button" class="game_page_buttons">hint</button>
+            <h3 id="hint_header">Stuck? <br> Get a hint</h3>
+            <p id="hint_Explanation">Do not rush to use it.<br>You can use it only <span id="hint_span"></span> times throughout the game.</p>
+            <button id="hint_button" class="game_page_buttons" onclick="hint()">hint</button>
+            <p id="hint_left_p">You have <span id="hint_left_span"></span> hints left</p>
         </div><br>
 
         <div id="mobyle_hint_div">
-            <h3 id="mobyle_hint_header">Stuck? Get a hint!</h3>
-            <p id="mobyle_hint_Explanation">Do not rush to use it. You can use it only 5 times throughout the game.</p>
-            <button id="mobyle_hint_button" class="game_page_buttons">hint</button>
+            <h3 id="mobyle_hint_header">Stuck? Get a hint</h3>
+            <p id="mobyle_hint_Explanation">Do not rush to use it. You can use it only <span id="mobyle_hint_span"></span> times throughout the game.</p>
+            <button id="mobyle_hint_button" class="game_page_buttons" onclick="hint()">hint</button>
+            <p id="mobyle_left_p">You have <span id="mobyle_left_span"></span> hints left</p>
         </div><br>
 
         <button id="again_button" class="game_page_buttons">again</button>
