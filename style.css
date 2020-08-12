@@ -21,7 +21,7 @@ body{
     background-attachment: fixed;
 }
 
-/* #landing_page, #game_page{
+/* #selection_page{
     display: none;
 } */
 
@@ -58,6 +58,10 @@ button{
 
 input{
     outline: none;
+}
+
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 
 
@@ -206,6 +210,104 @@ input{
 }
 
 
+/* Design for the game_page */
+
+#sudoku{
+    display: inline-block;
+    vertical-align: bottom;
+    margin-top: 30px;
+}
+
+table{
+    border-collapse: collapse;
+    margin: auto;
+}
+
+td{
+    border: 0.5px solid rgb(94, 92, 92);
+    width: 30px;
+    height: 30px;
+}
+
+.all_inputs{
+    width: 30px;
+    height: 30px;
+    border: none;
+    color: rgb(23, 23, 230);
+    font-size: 20px;
+    text-align: center;
+}
+
+.top_1{
+    border-top: 1.5px solid rgb(23, 23, 230);
+}
+
+.side_1{
+    border-left: 1.5px solid rgb(23, 23, 230);
+}
+
+.side_2{
+    border-right: 1.5px solid rgb(23, 23, 230);
+}
+
+.top_2{
+    border-bottom: 1.5px solid rgb(23, 23, 230);
+}
+
+.game_page_buttons{
+    width: 250px;
+    height: 35px;
+    border-radius: 10px;
+    border: 1px solid rgb(5, 5, 160);
+    background-color: rgb(110, 110, 245);
+    color: white;
+    font-size: 18px;
+    margin:10px 7px 10px 7px;
+}
+.game_page_buttons:hover{
+    background-color: rgba(110, 110, 245, 0.705);
+    transition: 0.5s;
+}
+.game_page_buttons:active{
+    background-color: rgb(110, 110, 245);
+    transition: none;
+}
+
+#hint_div{
+    display: inline-block;
+    width: 180px;
+    height: 200px;
+    background-color: rgba(94, 92, 92, 0.185);
+    padding: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+#hint_header, #mobyle_hint_header{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 26px;
+    line-height: 30px;
+    padding: 0;     
+}
+
+#hint_Explanation, #mobyle_hint_Explanation{
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    color: rgb(94, 92, 92);
+}
+
+#hint_button ,#mobyle_hint_button{
+    width: 140px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+#mobyle_hint_div{
+    display: none;
+}
 
 
 /* Makes the game responsive */
@@ -261,8 +363,6 @@ input{
     .selection_div{
         width: 280px;
         height: 80px;
-        /* margin-top: 3px;
-        margin-bottom: 3px; */
     }
 
     .buttons_Explanation_header{
@@ -278,6 +378,59 @@ input{
         width: 150px;
         height: 30px;
         margin-top: 3px;
+    }
+
+    /* Design for the game page  */
+
+    #h1_in_game_page{
+        margin-bottom: 2px;
+        padding-bottom: 0;
+    }
+
+    td{
+        width: 28px;
+        height: 28px;
+    }
+
+    .all_inputs{
+        width: 28px;
+        height: 28px;
+    }
+
+    .game_page_buttons{
+        width: 150px;
+    }
+
+    #hint_div{
+        display: none;
+    }
+
+    #mobyle_hint_div{
+        display: inline-block;
+        width: 300px;
+        height: 120px;
+        background-color: rgba(94, 92, 92, 0.185);
+        padding: 5px;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+
+    #mobyle_hint_header{
+        margin: 0;
+    }
+
+    #mobyle_hint_Explanation{
+        display: inline-block;
+    }
+
+    #mobyle_hint_button{
+        height: 20;
+        padding: 0;
+        margin-top: 3px;
+    }
+
+    .game_page_buttons{
+        margin-top: 20px;
     }
 
 }

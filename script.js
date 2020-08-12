@@ -7,27 +7,42 @@ let eng_or_heb = 'eng';
 function playing_in_english() {
 
     eng_or_heb = 'eng';
-    location.reload()
-    // First page
-    // document.getElementById('h1_landing_page').innerHTML = 'Welcome!';
-    // document.getElementById('h3_landing_page').innerHTML = 'Want to play sudoku ?';
-    // document.getElementById('main_div_username_and_password').style.direction = 'ltr';
-    // document.getElementById('div_username').innerHTML = 'Please enter your username';
-    // document.getElementById('username').placeholder = 'username';
-    // document.getElementById('div_password').innerHTML = 'Please enter your password';
-    // document.getElementById('password').placeholder = 'password';
-    // document.getElementById('Lets_go_button').innerHTML = "Let's go";
 
-    // // Second page
-    // document.getElementById('h2_in_selection_page').innerHTML = 'hi';
-    // document.getElementById('selection_page').style.direction = 'ltr';
-    // document.getElementById('h3_in_selection_page').innerHTML = 'good to see you';
-    // document.getElementById('p_in_selection_page').innerHTML = 'Please select the difficulty level you want to play';
-    // document.getElementById('easy_header').innerHTML = 'easy';
-    // document.getElementById('normal_header').innerHTML = 'normal';
-    // document.getElementById('Hard_header').innerHTML = 'קשה';
+    document.getElementById('h1_landing_page').innerHTML = 'Welcome!';
+    document.getElementById('h3_landing_page').innerHTML = 'Want to play sudoku ?';
+    document.getElementById('main_div_username_and_password').style.direction = 'ltr';
+    document.getElementById('div_username').innerHTML = 'Please enter your username';
+    document.getElementById('username').placeholder = 'username';
+    document.getElementById('div_password').innerHTML = 'Please enter your password';
+    document.getElementById('password').placeholder = 'password';
+    document.getElementById('Lets_go_button').innerHTML = "Let's go";
 
+    // Second page
+    document.getElementById('h2_in_selection_page').innerHTML = 'Hi';
+    document.getElementById('selection_page').style.direction = 'ltr';
+    document.getElementById('h3_in_selection_page').innerHTML = 'good to see you!';
+    document.getElementById('p_in_selection_page').innerHTML = 'Please select the difficulty level you want to play.';
+    document.getElementById('easy_header').innerHTML = 'easy';
+    document.getElementById('easy_Explanation').innerHTML = 'You will get a sudoku that needs to be resolved 25%';
+    document.getElementById('easy_button').innerHTML = 'easy game';
+    document.getElementById('normal_header').innerHTML = 'normal';
+    document.getElementById('normal_Explanation').innerHTML = 'You will get a sudoku that needs to be resolved 50%';
+    document.getElementById('normal_button').innerHTML = 'normal game';
+    document.getElementById('Hard_header').innerHTML = 'hard';
+    document.getElementById('Hard_Explanation').innerHTML = 'You will get a sudoku that needs to be resolved 75%';
+    document.getElementById('Hard_button').innerHTML = 'Hard game';
 
+    // Third page
+    document.getElementById('h1_in_game_page').innerHTML = 'good luck !';
+    document.getElementById('game_page').style.direction = 'ltr';
+    document.getElementById('hint_header').innerHTML = 'Stuck? <br> Get a hint!';
+    document.getElementById('hint_Explanation').innerHTML = 'Do not rush to use it.<br>You can use it only 5 times throughout the game.';
+    document.getElementById('hint_button').innerHTML = 'hint';
+    document.getElementById('mobyle_hint_header').innerHTML = 'Stuck? Get a hint!';
+    document.getElementById('mobyle_hint_Explanation').innerHTML = 'Do not rush to use it. You can use it only 5 times throughout the game.';
+    document.getElementById('mobyle_hint_button').innerHTML = 'hint';
+    document.getElementById('again_button').innerHTML = 'again';
+    document.getElementById('finnish_button').innerHTML = 'finnish';
 }
 
 // Makes the game in Hebrew
@@ -47,8 +62,8 @@ function playing_in_hebrew() {
     // Second page
     document.getElementById('h2_in_selection_page').innerHTML = 'היי';
     document.getElementById('selection_page').style.direction = 'rtl';
-    document.getElementById('h3_in_selection_page').innerHTML = 'טוב לראות אותך';
-    document.getElementById('p_in_selection_page').innerHTML = 'בחר את רמת הקושי שאתה רוצה לשחק';
+    document.getElementById('h3_in_selection_page').innerHTML = '!טוב לראות אותך';
+    document.getElementById('p_in_selection_page').innerHTML = '.בחר את רמת הקושי שאתה רוצה לשחק';
     document.getElementById('easy_header').innerHTML = 'קל';
     document.getElementById('easy_Explanation').innerHTML = 'תקבל סודוקו שצריך לפתור 25%';
     document.getElementById('easy_button').innerHTML = 'משחק קל';
@@ -59,8 +74,17 @@ function playing_in_hebrew() {
     document.getElementById('Hard_Explanation').innerHTML = 'תקבל סודוקו שצריך לפתור 75%';
     document.getElementById('Hard_button').innerHTML = 'משחק קשה';
 
-
-
+    // Third page
+    document.getElementById('h1_in_game_page').innerHTML = 'בהצלחה !';
+    document.getElementById('game_page').style.direction = 'rtl';
+    document.getElementById('hint_header').innerHTML = 'נתקעת? <br> קבל רמז!';
+    document.getElementById('hint_Explanation').innerHTML = 'אל תמהר להשתמש בזה.<br> תוכל להשתמש ברמזים רק 5 פעמים במשך כל המשחק';
+    document.getElementById('hint_button').innerHTML = 'רמז';
+    document.getElementById('mobyle_hint_header').innerHTML = 'נתקעת? קבל רמז!';
+    document.getElementById('mobyle_hint_Explanation').innerHTML = 'אל תמהר להשתמש בזה. תוכל להשתמש ברמזים רק 5 פעמים במשך כל המשחק';
+    document.getElementById('mobyle_hint_button').innerHTML = 'רמז';
+    document.getElementById('again_button').innerHTML = 'מהתחלה';
+    document.getElementById('finnish_button').innerHTML = 'סיימתי';
 }
 
 // Moves to the selection page
@@ -98,10 +122,38 @@ function landing_page() {
     }
 }
 
-//Raises and returns the language buttons
+//Deletes and returns the language buttons
 function language_buttons_display_block() {
     document.getElementById('language_buttons').style.display = 'block';
 }
 function language_buttons_display_none() {
     document.getElementById('language_buttons').style.display = 'none';
+}
+
+
+// Allows to write only one number without zero
+function input_value(a) {
+  
+    if(a.value == 0){
+        a.value = '';
+    }
+
+    if (a.value.length > 1) {
+
+        if (a.value.charAt(1)==0) {
+
+            a.value = a.value.slice(0,1)
+        }
+
+        else{
+
+            a.value = a.value.slice(1)
+        }
+    }
+}
+
+// Moves to the game page
+function selection_page() {
+    document.getElementById('selection_page').style.display = 'none';
+    document.getElementById('game_page').style.display = 'block';
 }
