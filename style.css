@@ -228,6 +228,8 @@ td{
     border: 0.5px solid rgb(94, 92, 92);
     width: 30px;
     height: 30px;
+    margin: 0;
+    padding: 0;
 }
 
 .all_inputs{
@@ -237,6 +239,8 @@ td{
     color: rgb(23, 23, 230);
     font-size: 20px;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 .top_1{
@@ -448,7 +452,22 @@ td{
 
 }
 
+@media (min-width: 1400px){
 
+    .top_1{
+        border-top: 2.0px solid rgb(23, 23, 230);
+    }
+    
+    .side_1{
+        border-left: 2.0px solid rgb(23, 23, 230);
+    }
+    
+    .side_2{
+        border-right: 2.0px solid rgb(23, 23, 230);
+    }
+    
+    .top_2{
+        border-bottom: 2.0px solid rgb(23, 23, 230);
+    }
 
-
-
+}
