@@ -21,7 +21,7 @@ body{
     background-attachment: fixed;
 }
 
-/* #selection_page, */
+#selection_page,
 /* #landing_page
 {
     display: none;
@@ -411,7 +411,7 @@ td{
 
     .all_inputs{
         width: 30px;
-        height: 31px;
+        height: 32px;
     }
 
     .game_page_buttons{
