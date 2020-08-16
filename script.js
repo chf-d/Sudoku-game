@@ -43,7 +43,7 @@ function playing_in_english() {
     document.getElementById('mobyle_hint_Explanation').innerHTML = 'Do not rush to use it. You can use it only <span id="mobyle_hint_span"></span> times throughout the game.';
     document.getElementById('mobyle_hint_button').innerHTML = 'hint';
     document.getElementById('mobyle_left_p').innerHTML = 'You have <span id="mobyle_left_span"></span> hints left';
-    document.getElementById('again_button').innerHTML = 'again';
+    document.getElementById('again_button').innerHTML = 'new game';
     document.getElementById('finnish_button').innerHTML = 'finnish';
 }
 
@@ -88,7 +88,7 @@ function playing_in_hebrew() {
     document.getElementById('mobyle_hint_Explanation').innerHTML = 'אל תמהר להשתמש בזה. תוכל להשתמש ברמזים רק <span id="mobyle_hint_span"></span> פעמים במשך כל המשחק';
     document.getElementById('mobyle_hint_button').innerHTML = 'רמז';
     document.getElementById('mobyle_left_p').innerHTML = 'נשאר לך <span id="mobyle_left_span"></span> רמזים';
-    document.getElementById('again_button').innerHTML = 'מהתחלה';
+    document.getElementById('again_button').innerHTML = 'משחק חדש';
     document.getElementById('finnish_button').innerHTML = 'סיימתי';
 }
 
@@ -290,5 +290,60 @@ function hint() {
     }
 }
 
+// Cleans the sudoku and puts in a new one
+function new_game() {
+
+    for (let x = 1; x <= 9; x++) {
+
+        for (let y = 1; y <= 9; y++) {
+
+            document.getElementById(`input_${x}_${y}`).style.color = 'rgb(23, 23, 230)';
+            document.getElementById(`input_${x}_${y}`).style.backgroundColor = 'rgb(255, 255, 255)'
+            document.getElementById(`input_${x}_${y}`).readOnly = false;
+
+        }
+    }
+
+    create_a_new_sudoku()
+
+    document.getElementById('game_page').style.display = 'none';
+    document.getElementById('selection_page').style.display = 'block';
+    document.getElementById('Hint_values').style.display = 'block';
+    document.getElementById('mobyle_Hint_values').style.display = 'block';
+}
 
 
+function finnish() {
+    
+    document.getElementById('Hint_values').style.display = 'none';
+    document.getElementById('mobyle_Hint_values').style.display = 'none';
+
+    for (let x = 1; x <= 9; x++) {
+
+        for (let z = 1; z <= 9; z++) {
+
+            if (document.getElementById(`input_${x}_${z}`).value == '') {
+
+                document.getElementById(`input_${x}_${z}`).style.backgroundColor = 'rgba(255, 0, 0, 0.25)'
+            }
+
+        }
+    }
+    
+
+    // let row = document.getElementsByClassName('row_1');
+    // let row_1 = '';
+
+    // for (let i = 0; i < 9; i++) {
+    //     row_1 += row[i].value;
+    // }
+    
+    // for (let y = 1; y <= 9; y++) {
+
+    //     if (row_1.indexOf(y) == -1) {
+    //         console.log('??????');
+    //     }
+    //     else console.log('!!!!!!');
+    // }
+
+}

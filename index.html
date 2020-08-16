@@ -184,21 +184,25 @@
         </div>
 
         <div id="hint_div">
-            <h3 id="hint_header">Stuck? <br> Get a hint</h3>
-            <p id="hint_Explanation">Do not rush to use it.<br>You can use it only <span id="hint_span"></span> times throughout the game.</p>
-            <button id="hint_button" class="game_page_buttons" onclick="hint()">hint</button>
-            <p id="hint_left_p">You have <span id="hint_left_span"></span> hints left</p>
+            <div id="Hint_values">
+                <h3 id="hint_header">Stuck? <br> Get a hint</h3>
+                <p id="hint_Explanation">Do not rush to use it.<br>You can use it only <span id="hint_span"></span> times throughout the game.</p>
+                <button id="hint_button" class="game_page_buttons" onclick="hint()">hint</button>
+                <p id="hint_left_p">You have <span id="hint_left_span"></span> hints left</p>
+            </div>
         </div><br>
 
         <div id="mobyle_hint_div">
-            <h3 id="mobyle_hint_header">Stuck? Get a hint</h3>
-            <p id="mobyle_hint_Explanation">Do not rush to use it. You can use it only <span id="mobyle_hint_span"></span> times throughout the game.</p>
-            <button id="mobyle_hint_button" class="game_page_buttons" onclick="hint()">hint</button>
-            <p id="mobyle_left_p">You have <span id="mobyle_left_span"></span> hints left</p>
+            <div id="mobyle_Hint_values">
+                <h3 id="mobyle_hint_header">Stuck? Get a hint</h3>
+                <p id="mobyle_hint_Explanation">Do not rush to use it. You can use it only <span id="mobyle_hint_span"></span> times throughout the game.</p>
+                <button id="mobyle_hint_button" class="game_page_buttons" onclick="hint()">hint</button>
+                <p id="mobyle_left_p">You have <span id="mobyle_left_span"></span> hints left</p>
+            </div>
         </div><br>
 
-        <button id="again_button" class="game_page_buttons">again</button>
-        <button id="finnish_button" class="game_page_buttons">finnish</button>
+        <button id="again_button" class="game_page_buttons" onclick="new_game()">new game</button>
+        <button id="finnish_button" class="game_page_buttons" onclick="finnish()">finnish</button>
     </div>
 
     <script src='script.js'></script>

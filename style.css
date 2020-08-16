@@ -22,13 +22,14 @@ body{
 }
 
 /* #selection_page, */
-/* #landing_page{
-    display: none;
-} */
-
-#selection_page, #game_page{
+#landing_page
+{
     display: none;
 }
+
+/* #selection_page, #game_page{
+    display: none;
+} */
 
 h1{
     font-size: 120px;
@@ -97,7 +98,6 @@ input::-webkit-inner-spin-button {
 }
 .input_username_and_password:hover{
     background-color: rgba(5, 5, 146, 0.075);
-    /* border: 1px solid rgb(5, 5, 160); */
 }
 
 #username_error,#password_error{
@@ -117,6 +117,7 @@ input::-webkit-inner-spin-button {
     color: white;
     font-size: 22px;
     margin-top: 20px;
+    margin-left: 10px;
 }
 #Lets_go_button:hover{
     background-color: rgba(110, 110, 245, 0.705);
@@ -233,8 +234,8 @@ td{
 }
 
 .all_inputs{
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     border: none;
     color: rgb(23, 23, 230);
     font-size: 20px;
@@ -367,6 +368,7 @@ td{
 
     #Lets_go_button{
         width: 245px;
+        margin-left: 5px;
     }
 
     /* Design for the selection page  */
@@ -408,8 +410,8 @@ td{
     }
 
     .all_inputs{
-        width: 28px;
-        height: 28px;
+        width: 30px;
+        height: 31px;
     }
 
     .game_page_buttons{
