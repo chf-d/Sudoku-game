@@ -22,14 +22,14 @@ body{
 }
 
 #selection_page,
-/* #landing_page
+#landing_page
 {
     display: none;
-} */
-
-#selection_page, #game_page{
-    display: none;
 }
+
+/* #selection_page, #game_page{
+    display: none;
+} */
 
 h1{
     font-size: 120px;
