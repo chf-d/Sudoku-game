@@ -313,37 +313,170 @@ function new_game() {
 }
 
 
+// All validations for the end
 function finnish() {
     
+    // Cleane the hint div
     document.getElementById('Hint_values').style.display = 'none';
     document.getElementById('mobyle_Hint_values').style.display = 'none';
 
+
+    // Locks the inputs and paints in red what is empty
     for (let x = 1; x <= 9; x++) {
 
         for (let z = 1; z <= 9; z++) {
 
+            document.getElementById(`input_${x}_${z}`).readOnly = true;
+
             if (document.getElementById(`input_${x}_${z}`).value == '') {
 
-                document.getElementById(`input_${x}_${z}`).style.backgroundColor = 'rgba(255, 0, 0, 0.25)'
+                document.getElementById(`input_${x}_${z}`).style.backgroundColor = 'rgba(255, 0, 0, 0.15)'
             }
-
         }
     }
+            
+    chack_row()
+    chack_col()
     
+}
 
-    // let row = document.getElementsByClassName('row_1');
-    // let row_1 = '';
 
-    // for (let i = 0; i < 9; i++) {
-    //     row_1 += row[i].value;
-    // }
+function chack_row() {
+
+   var counter_row = 0;
     
-    // for (let y = 1; y <= 9; y++) {
+    // Checks the rows if they contain all the numbers
+    for (let i = 1; i <= 9; i++) {
+        
+        // Puts all the numbers of the row in a array
+        let row = [];
 
-    //     if (row_1.indexOf(y) == -1) {
-    //         console.log('??????');
-    //     }
-    //     else console.log('!!!!!!');
-    // }
+        for (let j = 0; j < 9; j++) {
+    
+            row.push(parseInt(document.getElementsByClassName(`row_${i}`)[j].value));
+        }
 
+        // Takes the numbers along with their location and inserts them as an object into the array
+        for (let y = 1; y <= 9; y++) {
+            
+            let row_num = []
+
+            for (let n = 0; n < 9; n++) {
+                
+                if (row[n] == y) {
+                    row_num.push({number:y,index:`input_${i}_${n+1}`});
+                }
+                
+            }  
+
+            // If he finds a number more than once he paints the non-original in red
+            if (row_num.length > 1 ) {
+
+                for (let g = 0; g < row_num.length ; g++) {
+
+                    if (document.getElementById(`${row_num[g].index}`).style.backgroundColor == 'rgb(255, 255, 255)') {
+                        document.getElementById(`${row_num[g].index}`).style.backgroundColor = 'rgba(255, 0, 0, 0.15)';
+                        document.getElementById(`${row_num[g].index}`).style.color = 'red';
+                    }
+                }
+            }
+            else{
+                counter_row ++;
+            }
+        }
+    }
+}
+
+function chack_col() {
+
+    var counter_col = 0;
+
+    
+    // Checks the cols if they contain all the numbers
+    for (let i = 1; i <= 9; i++) {
+        
+        // Puts all the numbers of the col in a array
+        let col = [];
+
+        for (let j = 0; j < 9; j++) {
+    
+            col.push(parseInt(document.getElementsByClassName(`col_${i}`)[j].value));
+        }
+
+        // Takes the numbers along with their location and inserts them as an object into the array
+        for (let y = 1; y <= 9; y++) {
+            
+            let col_num = []
+
+            for (let n = 0; n < 9; n++) {
+                
+                if (col[n] == y) {
+                    col_num.push({number:y,index:`input_${n+1}_${i}`});
+                }
+                
+            }  
+
+            // If he finds a number more than once he paints the non-original in red
+            if (col_num.length > 1 ) {
+
+                for (let g = 0; g < col_num.length ; g++) {
+
+                    if (document.getElementById(`${col_num[g].index}`).style.backgroundColor == 'rgb(255, 255, 255)') {
+                        document.getElementById(`${col_num[g].index}`).style.backgroundColor = 'rgba(255, 0, 0, 0.15)';
+                        document.getElementById(`${col_num[g].index}`).style.color = 'red';
+                    }
+                }
+            }
+            else{
+                counter_col ++;
+            }
+        }
+    }
+}
+
+function chack_box() {
+
+    var counter_box = 0;
+    
+    // Checks the boxs if they contain all the numbers
+
+    for (let i = 1; i <= 9; i++) {
+        
+        // Puts all the numbers of the box in a array
+        let box = [[],[],[]];
+
+        for (let j = 0; j < 9; j++) {
+    
+            box.push(parseInt(document.getElementsByClassName(`box_${i}`)[j].value));
+        }
+
+        // Takes the numbers along with their location and inserts them as an object into the array
+        for (let y = 1; y <= 9; y++) {
+            
+            let box_num = []
+
+            for (let n = 0; n < 9; n++) {
+
+                if (box[n] == y) {
+
+                    box_num.push({number:y,index:`input_${i}_${n+1}`});
+                }
+            }  
+
+            // If he finds a number more than once he paints the non-original in red
+            if (box_num.length > 1 ) {
+
+                for (let g = 0; g < box_num.length ; g++) {
+
+                    if (document.getElementById(`${box_num[g].index}`).style.backgroundColor == 'rgb(255, 255, 255)') {
+                        document.getElementById(`${box_num[g].index}`).style.backgroundColor = 'rgba(255, 0, 0, 0.15)';
+                        document.getElementById(`${box_num[g].index}`).style.color = 'red';
+                    }
+                }
+            }
+            else{
+                counter_box ++;
+            }
+        }
+    }
 }

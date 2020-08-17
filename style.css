@@ -21,8 +21,8 @@ body{
     background-attachment: fixed;
 }
 
-#selection_page,
-/* #landing_page
+/* #selection_page,
+#landing_page
 {
     display: none;
 } */
@@ -324,6 +324,26 @@ td{
 
 
 
+/* Classes of js */
+
+/* .blue_color{
+    color: rgb(23, 23, 230);
+}
+
+.eror_color{
+    color: red;
+}
+
+.white_background{
+    background-color: white;
+}
+
+.eror_background{
+    background-color: rgba(255, 0, 0, 0.15);
+} */
+
+
+
 
 
 /* Makes the game responsive */
@@ -410,8 +430,8 @@ td{
     }
 
     .all_inputs{
-        width: 31px;
-        height: 33px;
+        width: 32px;
+        height: 32px;
     }
 
     .game_page_buttons{
