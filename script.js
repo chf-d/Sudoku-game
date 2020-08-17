@@ -218,6 +218,7 @@ function create_a_new_sudoku() {
         for (let z = 0; z < 9; z++) {
 
             document.getElementById(`input_${x+1}_${z+1}`).value = new_sudoku[x][z];
+            document.getElementById(`input_${x+1}_${z+1}`).style.backgroundColor = 'rgb(255, 255, 255)'
         }
     }
 }
