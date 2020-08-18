@@ -8,6 +8,7 @@ function playing_in_english() {
 
     eng_or_heb = 'eng';
 
+    // First page
     document.getElementById('h1_landing_page').innerHTML = 'Welcome!';
     document.getElementById('h3_landing_page').innerHTML = 'Want to play sudoku ?';
     document.getElementById('main_div_username_and_password').style.direction = 'ltr';
@@ -16,6 +17,12 @@ function playing_in_english() {
     document.getElementById('div_password').innerHTML = 'Please enter your password';
     document.getElementById('password').placeholder = 'password';
     document.getElementById('Lets_go_button').innerHTML = "Let's go";
+    if (document.getElementById('username_error').innerHTML == 'שם משתמש לא תקין, תנסה שוב בבקשה.') {
+        document.getElementById('username_error').innerHTML = 'Invalid username, please try again.';
+        document.getElementById('password_error').innerHTML = 'Invalid password, please try again.';
+        document.getElementById('username_error').style.textAlign = 'left';
+        document.getElementById('password_error').style.textAlign = 'left';
+    }
 
     // Second page
     document.getElementById('h2_in_selection_page').innerHTML = 'Hi';
@@ -45,6 +52,16 @@ function playing_in_english() {
     document.getElementById('mobyle_left_p').innerHTML = 'You have <span id="mobyle_left_span"></span> hints left';
     document.getElementById('again_button').innerHTML = 'new game';
     document.getElementById('finnish_button').innerHTML = 'finnish';
+    document.getElementById('eror_header').innerHTML = 'oops';
+    document.getElementById('eror_p').innerHTML = 'You did not succeed this time,<br> try your luck again.';
+    document.getElementById('eror_h4').innerHTML = 'You made <span id="eror_span"></span> mistakes';
+    document.getElementById('mobyle_eror_header').innerHTML = 'oops';
+    document.getElementById('mobyle_eror_p').innerHTML = 'You did not succeed this time,<br> try your luck again.';
+    document.getElementById('mobyle_eror_h4').innerHTML = 'You made <span id="mobyle_eror_span"></span> mistakes';
+    document.getElementById('success_header').innerHTML = 'Well done !';
+    document.getElementById('success_p').innerHTML = 'You played the game without a single mistake!';
+    document.getElementById('mobyle_success_header').innerHTML = 'Well done !';
+    document.getElementById('mobyle_success_p').innerHTML = 'You played the game without a single mistake!';
 }
 
 // Makes the game in Hebrew
@@ -62,11 +79,18 @@ function playing_in_hebrew() {
     document.getElementById('password').placeholder = 'סיסמה';
     document.getElementById('Lets_go_button').innerHTML = 'בוא נתחיל';
 
+    if (document.getElementById('username_error').innerHTML == 'Invalid username, please try again.') {
+        document.getElementById('username_error').innerHTML = 'שם משתמש לא תקין, תנסה שוב בבקשה.';
+        document.getElementById('password_error').innerHTML = 'סיסמה לא תקינה, תנסה שוב בבקשה.';
+        document.getElementById('username_error').style.textAlign = 'right';
+        document.getElementById('password_error').style.textAlign = 'right';
+    }
+
     // Second page
     document.getElementById('h2_in_selection_page').innerHTML = 'היי';
     document.getElementById('selection_page').style.direction = 'rtl';
-    document.getElementById('h3_in_selection_page').innerHTML = '!טוב לראות אותך';
-    document.getElementById('p_in_selection_page').innerHTML = '.בחר את רמת הקושי שאתה רוצה לשחק';
+    document.getElementById('h3_in_selection_page').innerHTML = 'טוב לראות אותך!';
+    document.getElementById('p_in_selection_page').innerHTML = 'בחר את רמת הקושי שאתה רוצה לשחק.';
     document.getElementById('easy_header').innerHTML = 'קל';
     document.getElementById('easy_Explanation').innerHTML = 'תקבל סודוקו שצריך לפתור 35%';
     document.getElementById('easy_button').innerHTML = 'משחק קל';
@@ -90,6 +114,16 @@ function playing_in_hebrew() {
     document.getElementById('mobyle_left_p').innerHTML = 'נשאר לך <span id="mobyle_left_span"></span> רמזים';
     document.getElementById('again_button').innerHTML = 'משחק חדש';
     document.getElementById('finnish_button').innerHTML = 'סיימתי';
+    document.getElementById('eror_header').innerHTML = 'אופסס';
+    document.getElementById('eror_p').innerHTML = 'לא הצלחת הפעם,<br> נסה את מזלך שוב אולי תצליח.';
+    document.getElementById('eror_h4').innerHTML = 'עשית <span id="eror_span"></span> טעויות';
+    document.getElementById('mobyle_eror_header').innerHTML = 'אופסס';
+    document.getElementById('mobyle_eror_p').innerHTML = 'לא הצלחת הפעם,<br> נסה את מזלך שוב אולי תצליח.';
+    document.getElementById('mobyle_eror_h4').innerHTML = 'עשית <span id="mobyle_eror_span"></span> טעויות';
+    document.getElementById('success_header').innerHTML = 'כל הכבוד !';
+    document.getElementById('success_p').innerHTML = 'הצלחת לשחק את המשחק מבלי לעשות טעות אחת !';
+    document.getElementById('mobyle_success_header').innerHTML = 'כל הכבוד !';
+    document.getElementById('mobyle_success_p').innerHTML = 'הצלחת לשחק את המשחק מבלי לעשות טעות אחת !';
 }
 
 //Checks if login information is correct and Moves to the selection page
@@ -311,6 +345,10 @@ function new_game() {
     document.getElementById('selection_page').style.display = 'block';
     document.getElementById('Hint_values').style.display = 'block';
     document.getElementById('mobyle_Hint_values').style.display = 'block';
+    document.getElementById('Error_Message').style.display = 'none';
+    document.getElementById('mobyle_error_message').style.display = 'none';
+    document.getElementById('Success_Message').style.display = 'none';
+    document.getElementById('mobyle_success_message').style.display = 'none';
 }
 
 
@@ -332,40 +370,53 @@ function finnish() {
             if (document.getElementById(`input_${x}_${z}`).value == '') {
 
                 document.getElementById(`input_${x}_${z}`).style.backgroundColor = 'rgba(255, 0, 0, 0.15)'
+                error_counter++;
             }
         }
     }
             
     chack_row()
     chack_col()
-    
+    chack_box()
+
+    if (chack_row() == true && chack_col() == true && chack_box() == true) {
+        document.getElementById('Success_Message').style.display = 'block';
+        document.getElementById('mobyle_success_message').style.display = 'block';
+    }
+    else{
+        document.getElementById('Error_Message').style.display = 'block';
+        document.getElementById('mobyle_error_message').style.display = 'block';
+        document.getElementById('eror_span').innerHTML = error_counter;
+        document.getElementById('mobyle_eror_span').innerHTML = error_counter;
+    }
 }
 
+let error_counter = 0;
 
+// Checks the rows if they contain all the numbers
 function chack_row() {
 
-   var counter_row = 0;
+   let counter_row = 0;
     
-    // Checks the rows if they contain all the numbers
+    // Takes the numbers along with their location and inserts them as an object into the array
     for (let i = 1; i <= 9; i++) {
         
-        // Puts all the numbers of the row in a array
         let row = [];
 
-        for (let j = 0; j < 9; j++) {
+        for (let j = 1; j <= 9; j++) {
     
-            row.push(parseInt(document.getElementsByClassName(`row_${i}`)[j].value));
-        }
+            row.push({number:parseInt(document.getElementById(`input_${i}_${j}`).value) , index:`input_${i}_${j}`});
+        }        
 
-        // Takes the numbers along with their location and inserts them as an object into the array
+        // Enter each number individually into the array to check if it exists twice
         for (let y = 1; y <= 9; y++) {
             
             let row_num = []
 
             for (let n = 0; n < 9; n++) {
                 
-                if (row[n] == y) {
-                    row_num.push({number:y,index:`input_${i}_${n+1}`});
+                if (row[n].number == y) {
+                    row_num.push(row[n]);
                 }
                 
             }  
@@ -373,46 +424,55 @@ function chack_row() {
             // If he finds a number more than once he paints the non-original in red
             if (row_num.length > 1 ) {
 
-                for (let g = 0; g < row_num.length ; g++) {
+                for (let c = 0; c < row_num.length ; c++) {
 
-                    if (document.getElementById(`${row_num[g].index}`).style.backgroundColor == 'rgb(255, 255, 255)') {
-                        document.getElementById(`${row_num[g].index}`).style.backgroundColor = 'rgba(255, 0, 0, 0.15)';
-                        document.getElementById(`${row_num[g].index}`).style.color = 'red';
+                    if (document.getElementById(`${row_num[c].index}`).style.backgroundColor == 'rgb(255, 255, 255)') {
+                        document.getElementById(`${row_num[c].index}`).style.backgroundColor = 'rgba(255, 0, 0, 0.15)';
+                        document.getElementById(`${row_num[c].index}`).style.color = 'red';
+                        error_counter++;
                     }
                 }
             }
-            else{
+            else if(row_num.length == 1 ){
                 counter_row ++;
             }
         }
     }
+
+    // If all goes well he returns truth
+    if (counter_row == 81) {
+        return true
+    }
+    else{
+        return false
+    }
 }
 
+
+// Checks the cols if they contain all the numbers
 function chack_col() {
 
-    var counter_col = 0;
+    let counter_col = 0;
 
-    
-    // Checks the cols if they contain all the numbers
+    // Takes the numbers along with their location and inserts them as an object into the array
     for (let i = 1; i <= 9; i++) {
         
-        // Puts all the numbers of the col in a array
         let col = [];
 
-        for (let j = 0; j < 9; j++) {
+        for (let j = 1; j <= 9; j++) {
     
-            col.push(parseInt(document.getElementsByClassName(`col_${i}`)[j].value));
+            col.push({number:parseInt(document.getElementById(`input_${j}_${i}`).value) , index:`input_${j}_${i}`});
         }
 
-        // Takes the numbers along with their location and inserts them as an object into the array
+        // Enter each number individually into the array to check if it exists twice
         for (let y = 1; y <= 9; y++) {
             
             let col_num = []
 
             for (let n = 0; n < 9; n++) {
                 
-                if (col[n] == y) {
-                    col_num.push({number:y,index:`input_${n+1}_${i}`});
+                if (col[n].number == y) {
+                    col_num.push(col[n]);
                 }
                 
             }  
@@ -420,64 +480,103 @@ function chack_col() {
             // If he finds a number more than once he paints the non-original in red
             if (col_num.length > 1 ) {
 
-                for (let g = 0; g < col_num.length ; g++) {
+                for (let c = 0; c < col_num.length ; c++) {
 
-                    if (document.getElementById(`${col_num[g].index}`).style.backgroundColor == 'rgb(255, 255, 255)') {
-                        document.getElementById(`${col_num[g].index}`).style.backgroundColor = 'rgba(255, 0, 0, 0.15)';
-                        document.getElementById(`${col_num[g].index}`).style.color = 'red';
+                    if (document.getElementById(`${col_num[c].index}`).style.backgroundColor == 'rgb(255, 255, 255)') {
+                        document.getElementById(`${col_num[c].index}`).style.backgroundColor = 'rgba(255, 0, 0, 0.15)';
+                        document.getElementById(`${col_num[c].index}`).style.color = 'red';
+                        error_counter++;
                     }
                 }
             }
-            else{
+            else if (col_num.length == 1) {
                 counter_col ++;
             }
         }
     }
-}
-
-function chack_box() {
-
-    var counter_box = 0;
     
-    // Checks the boxs if they contain all the numbers
-
-    for (let i = 1; i <= 9; i++) {
-        
-        // Puts all the numbers of the box in a array
-        let box = [[],[],[]];
-
-        for (let j = 0; j < 9; j++) {
-    
-            box.push(parseInt(document.getElementsByClassName(`box_${i}`)[j].value));
-        }
-
-        // Takes the numbers along with their location and inserts them as an object into the array
-        for (let y = 1; y <= 9; y++) {
-            
-            let box_num = []
-
-            for (let n = 0; n < 9; n++) {
-
-                if (box[n] == y) {
-
-                    box_num.push({number:y,index:`input_${i}_${n+1}`});
-                }
-            }  
-
-            // If he finds a number more than once he paints the non-original in red
-            if (box_num.length > 1 ) {
-
-                for (let g = 0; g < box_num.length ; g++) {
-
-                    if (document.getElementById(`${box_num[g].index}`).style.backgroundColor == 'rgb(255, 255, 255)') {
-                        document.getElementById(`${box_num[g].index}`).style.backgroundColor = 'rgba(255, 0, 0, 0.15)';
-                        document.getElementById(`${box_num[g].index}`).style.color = 'red';
-                    }
-                }
-            }
-            else{
-                counter_box ++;
-            }
-        }
+    // If all goes well he returns truth
+    if (counter_col == 81) {
+        return true
+    }
+    else{
+        return false
     }
 }
+
+// Checks the boxs if they contain all the numbers
+function chack_box() {
+
+    let counter_box = 0;
+    
+    // Takes the numbers along with their location and inserts them as an object into the array
+    // Because it is a box I needed 4 loops Because each loop ran 3 times
+    let start1 = 1;
+    let stop1 = 3;
+
+    for (let i = 1; i <= 3; i++) {
+
+        let start2 = 1;
+        let stop2 = 3;
+
+        for (let ii = 1; ii <= 3; ii++) {
+
+            let box = [];
+            
+            for (let j = start1; j <= stop1; j++) {
+            
+                for (let y = start2; y <= stop2; y++) {
+                    
+                    box.push({number:parseInt(document.getElementById(`input_${j}_${y}`).value) ,index:`input_${j}_${y}`});
+                }
+            }
+
+
+            // Enter each number individually into the array to check if it exists twice
+            for (let n = 1; n <= 9; n++) {
+                
+                let box_num = [];
+
+                for (let nn = 0; nn < 9; nn++) {
+                
+                    if (box[nn].number == n) {
+                        
+                        box_num.push(box[nn])
+                    }
+                }  
+
+                // If he finds a number more than once he paints the non-original in red
+                if (box_num.length > 1) {
+                
+                    for (let c = 0; c <box_num.length; c++) {
+                        
+                        if (document.getElementById(`${box_num[c].index}`).style.backgroundColor == 'rgb(255, 255, 255)') {
+                            document.getElementById(`${box_num[c].index}`).style.backgroundColor = 'rgba(255, 0, 0, 0.15)';
+                            document.getElementById(`${box_num[c].index}`).style.color = 'red';
+                            error_counter++;
+                        }
+                    }
+                }
+                else if (box_num.length == 1) {
+                    counter_box ++;
+                }
+            }
+
+            start2 += 3;
+            stop2 += 3;
+        }
+
+        start1 += 3;
+        stop1 += 3;
+    }
+
+    // If all goes well he returns truth
+    if (counter_box == 81) {
+        return true
+    }
+    else{
+        return false
+    }
+
+}
+

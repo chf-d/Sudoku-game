@@ -21,15 +21,15 @@ body{
     background-attachment: fixed;
 }
 
-/* #selection_page,
-#landing_page
+#selection_page
+/* #landing_page */
 {
     display: none;
-} */
-
-#selection_page, #game_page{
-    display: none;
 }
+
+/* #selection_page, #game_page{
+    display: none;
+} */
 
 h1{
     font-size: 120px;
@@ -77,7 +77,7 @@ input::-webkit-inner-spin-button {
 
 .div_username_and_password{
     background-color: rgb(224, 219, 219);
-    border-radius: 10px;
+    /* border-radius: 10px; */
     width: 220px;
     margin-bottom: 5px;
     color: rgb(102, 101, 101);
@@ -89,7 +89,7 @@ input::-webkit-inner-spin-button {
 
 .input_username_and_password{
     border: 1px solid rgba(110, 110, 245, 0.712);
-    border-radius: 10px;
+    /* border-radius: 10px; */
     width: 350px;
     height: 30px;
     padding-left: 5px;
@@ -111,8 +111,9 @@ input::-webkit-inner-spin-button {
 #Lets_go_button{
     width: 360px;
     height: 38px;
-    border-radius: 10px;
-    border: 1px solid rgb(5, 5, 160);
+    /* border-radius: 10px; */
+    /* border: 1px solid rgb(5, 5, 160); */
+    border: none;
     background-color: rgb(110, 110, 245);
     color: white;
     font-size: 22px;
@@ -149,8 +150,9 @@ input::-webkit-inner-spin-button {
 .language_button{
     width: 130px;
     height: 35px;
-    border-radius: 10px;
-    border: 1px solid rgb(5, 5, 160);
+    /* border-radius: 10px; */
+    /* border: 1px solid rgb(5, 5, 160); */
+    border: none;
     background-color: rgb(110, 110, 245);
     color: white;
     font-size: 18px;
@@ -263,8 +265,9 @@ td{
 .game_page_buttons{
     width: 250px;
     height: 35px;
-    border-radius: 10px;
-    border: 1px solid rgb(5, 5, 160);
+    /* border-radius: 10px; */
+    /* border: 1px solid rgb(5, 5, 160); */
+    border: none;
     background-color: rgb(110, 110, 245);
     color: white;
     font-size: 18px;
@@ -318,31 +321,48 @@ td{
     font-weight: 600;
 }
 
-#mobyle_hint_div{
+
+#eror_header , #mobyle_eror_header{
+    vertical-align: bottom;
+    display: inline-block;
+    color: red;
+    font-size: 47px;
+    line-height: 55px;
+    margin: 5px;
+    margin-bottom: 0;
+}
+
+#eror_p , #mobyle_eror_p{
+    color: red;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 13px 0px;
+}
+
+#eror_h4 , #mobyle_eror_h4{
+    color: red;
+    margin: 0;
+}
+
+#success_header , #mobyle_success_header{
+    vertical-align: bottom;
+    display: inline-block;
+    color: darkgreen;
+    font-size: 35px;
+    line-height: 35px;
+    margin: 20px 0px;
+}
+
+#success_p , #mobyle_success_p{
+    color: darkgreen;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+
+#mobyle_hint_div ,#Error_Message ,#Success_Message{
     display: none;
 }
-
-
-
-/* Classes of js */
-
-/* .blue_color{
-    color: rgb(23, 23, 230);
-}
-
-.eror_color{
-    color: red;
-}
-
-.white_background{
-    background-color: white;
-}
-
-.eror_background{
-    background-color: rgba(255, 0, 0, 0.15);
-} */
-
-
 
 
 
@@ -379,7 +399,7 @@ td{
     .div_username_and_password{
         width: 185px;
         font-size: 14px;
-        border-radius: 7px;
+        /* border-radius: 7px; */
     }
 
     .input_username_and_password{
@@ -387,7 +407,7 @@ td{
     }
 
     #Lets_go_button{
-        width: 245px;
+        width: 253px;
         margin-left: 5px;
     }
 
@@ -438,7 +458,7 @@ td{
         width: 150px;
     }
 
-    #hint_div{
+    #hint_div  ,#mobyle_error_message ,#mobyle_success_message{
         display: none;
     }
 
@@ -470,6 +490,27 @@ td{
 
     .game_page_buttons{
         margin-top: 20px;
+    }
+
+    #mobyle_eror_header {
+        margin: 5px 20px;
+        padding: 0;
+        line-height: 40px;
+    }
+
+    #mobyle_eror_p, #mobyle_success_p{
+        margin: 0;
+    }
+
+    #mobyle_success_message{
+        padding-top: 15px;
+    }
+
+    #mobyle_success_header{
+        margin: 0px 20px;
+        padding: 0;
+        line-height: 40px;
+        vertical-align: top;
     }
 
 }
