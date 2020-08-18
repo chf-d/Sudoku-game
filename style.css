@@ -107,14 +107,13 @@ input::-webkit-inner-spin-button {
 
 
 #Lets_go_button{
-    width: 360px;
+    width: 362px;
     height: 38px;
     border: none;
     background-color: rgb(110, 110, 245);
     color: white;
     font-size: 22px;
     margin-top: 20px;
-    /* margin-left: 10px; */
 }
 #Lets_go_button:hover{
     background-color: rgba(110, 110, 245, 0.705);
@@ -399,7 +398,7 @@ td{
     }
 
     #Lets_go_button{
-        width: 253px;
+        width: 257px;
         margin-left: 5px;
     }
 
