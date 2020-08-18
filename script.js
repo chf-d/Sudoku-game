@@ -131,6 +131,8 @@ function landing_page() {
     
     let user = document.getElementById('username').value;
     let pass = document.getElementById('password').value;
+    document.getElementById('username_error').innerHTML = '';
+    document.getElementById('password_error').innerHTML = '';
 
     if (user.toLowerCase() != 'abcd') {
 

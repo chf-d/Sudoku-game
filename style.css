@@ -71,7 +71,7 @@ input::-webkit-inner-spin-button {
 
 #main_div_username_and_password{
     padding-top: 20px;
-    width: 350px;
+    width: 362px;
     margin: auto;
 }
 
@@ -114,7 +114,7 @@ input::-webkit-inner-spin-button {
     color: white;
     font-size: 22px;
     margin-top: 20px;
-    margin-left: 10px;
+    /* margin-left: 10px; */
 }
 #Lets_go_button:hover{
     background-color: rgba(110, 110, 245, 0.705);
@@ -385,7 +385,7 @@ td{
     /* Design for the landing page */
 
     #main_div_username_and_password{
-        width: 250px;
+        width: 257px;
     }
 
     .div_username_and_password{
