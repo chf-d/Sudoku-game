@@ -21,15 +21,15 @@ body{
     background-attachment: fixed;
 }
 
-#selection_page
-/* #landing_page */
+/* #selection_page,
+#landing_page
 {
     display: none;
-}
-
-/* #selection_page, #game_page{
-    display: none;
 } */
+
+#selection_page, #game_page{
+    display: none;
+}
 
 h1{
     font-size: 120px;
@@ -77,7 +77,6 @@ input::-webkit-inner-spin-button {
 
 .div_username_and_password{
     background-color: rgb(224, 219, 219);
-    /* border-radius: 10px; */
     width: 220px;
     margin-bottom: 5px;
     color: rgb(102, 101, 101);
@@ -89,7 +88,6 @@ input::-webkit-inner-spin-button {
 
 .input_username_and_password{
     border: 1px solid rgba(110, 110, 245, 0.712);
-    /* border-radius: 10px; */
     width: 350px;
     height: 30px;
     padding-left: 5px;
@@ -111,8 +109,6 @@ input::-webkit-inner-spin-button {
 #Lets_go_button{
     width: 360px;
     height: 38px;
-    /* border-radius: 10px; */
-    /* border: 1px solid rgb(5, 5, 160); */
     border: none;
     background-color: rgb(110, 110, 245);
     color: white;
@@ -150,8 +146,6 @@ input::-webkit-inner-spin-button {
 .language_button{
     width: 130px;
     height: 35px;
-    /* border-radius: 10px; */
-    /* border: 1px solid rgb(5, 5, 160); */
     border: none;
     background-color: rgb(110, 110, 245);
     color: white;
@@ -265,8 +259,6 @@ td{
 .game_page_buttons{
     width: 250px;
     height: 35px;
-    /* border-radius: 10px; */
-    /* border: 1px solid rgb(5, 5, 160); */
     border: none;
     background-color: rgb(110, 110, 245);
     color: white;
@@ -534,3 +526,4 @@ td{
     }
 
 }
+
