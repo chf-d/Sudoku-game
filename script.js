@@ -351,10 +351,14 @@ function new_game() {
     document.getElementById('mobyle_success_message').style.display = 'none';
 }
 
+let error_counter = 0;
+
 
 // All validations for the end
 function finnish() {
-    
+
+    error_counter = 0;
+
     // Cleane the hint div
     document.getElementById('Hint_values').style.display = 'none';
     document.getElementById('mobyle_Hint_values').style.display = 'none';
@@ -391,7 +395,6 @@ function finnish() {
     }
 }
 
-let error_counter = 0;
 
 // Checks the rows if they contain all the numbers
 function chack_row() {
