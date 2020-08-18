@@ -181,7 +181,7 @@ function input_value(a) {
 
     if (a.value.length > 1) {
 
-        if (a.value.charAt(1)==0 || toString(a.value.charAt(1) == .)) {
+        if (a.value.charAt(1)==0 || a.value.toString ().charAt(1) == '.') {
 
             a.value = a.value.slice(0,1)
         }
