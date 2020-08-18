@@ -17,6 +17,7 @@ function playing_in_english() {
     document.getElementById('div_password').innerHTML = 'Please enter your password';
     document.getElementById('password').placeholder = 'password';
     document.getElementById('Lets_go_button').innerHTML = "Let's go";
+    
     if (document.getElementById('username_error').innerHTML == 'שם משתמש לא תקין, תנסה שוב בבקשה.') {
         document.getElementById('username_error').innerHTML = 'Invalid username, please try again.';
         document.getElementById('password_error').innerHTML = 'Invalid password, please try again.';
@@ -163,6 +164,14 @@ function landing_page() {
     }
 }
 
+// Clears the error inputs for a new username and password
+function Clean_username_error_div() {
+    document.getElementById('username_error').innerHTML = '';
+}
+function Clean_password_error_div() {
+    document.getElementById('password_error').innerHTML = '';
+}
+
 //Deletes and returns the language buttons
 function language_buttons_display_block() {
     document.getElementById('language_buttons').style.display = 'block';
@@ -181,7 +190,7 @@ function input_value(a) {
 
     if (a.value.length > 1) {
 
-        if (a.value.charAt(1)==0 || a.value.charAt(1) == '.') {
+        if (a.value.charAt(1)==0) {
 
             a.value = a.value.slice(0,1)
         }
@@ -316,16 +325,34 @@ function Delete_sudoku(value) {
     }
 }
 
-function hint() {
+// Selects a random location and confesses that it is empty and adds value there
+function hint() { 
 
+    // Checks if it is more than 0
     if (document.getElementById('hint_left_span').innerHTML > 0) {
-        document.getElementById('hint_left_span').innerHTML --;
-    }
 
-    if (document.getElementById('mobyle_left_span').innerHTML > 0) {
+        // Makes the counter 1 less
+        document.getElementById('hint_left_span').innerHTML --;
         document.getElementById('mobyle_left_span').innerHTML -- ;
+
+        // Looking for an empty location
+        for (let i = 0; i < 1; i++) {
+            let rand_num_1 = Math.floor(Math.random() * (10 - 1)) +1;
+            let rand_num_2 = Math.floor(Math.random() * (10 - 1)) +1;
+    
+            if (document.getElementById(`input_${rand_num_1}_${rand_num_2}`).value != '') {
+                i--;
+            }
+            else{
+                document.getElementById(`input_${rand_num_1}_${rand_num_2}`).value = new_sudoku[rand_num_1-1][rand_num_2-1];
+                document.getElementById(`input_${rand_num_1}_${rand_num_2}`).style.color = 'rgb(94, 92, 92)';
+                document.getElementById(`input_${rand_num_1}_${rand_num_2}`).style.backgroundColor = 'rgb(240, 240, 241)';
+                document.getElementById(`input_${rand_num_1}_${rand_num_2}`).readOnly = true;
+            }
+        }        
     }
 }
+
 
 // Cleans the sudoku and puts in a new one
 function new_game() {

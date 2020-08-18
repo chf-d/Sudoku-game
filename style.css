@@ -14,7 +14,7 @@ html,body{
 
 
 body{
-    background-image: url('background.jpg');
+    background-image: url('images/background.jpg');
     background-position: center ;
     background-repeat: no-repeat;
     background-size: cover;
@@ -69,8 +69,18 @@ input::-webkit-inner-spin-button {
 
 /* Design for the landing page */
 
+#h1_landing_page{
+    animation: blink 3s infinite;
+}
+
+@keyframes blink {
+    0%{color: rgb(94, 92, 92);}
+    50%{color: rgb(23, 23, 230);}
+    100%{color: rgb(94, 92, 92);}
+}
+
 #main_div_username_and_password{
-    padding-top: 20px;
+    padding-top: 10px;
     width: 362px;
     margin: auto;
 }
@@ -113,7 +123,7 @@ input::-webkit-inner-spin-button {
     background-color: rgb(110, 110, 245);
     color: white;
     font-size: 22px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 #Lets_go_button:hover{
     background-color: rgba(110, 110, 245, 0.705);
@@ -128,7 +138,7 @@ input::-webkit-inner-spin-button {
     width: 300px;
     height: 30px;
     margin: auto;
-    margin-top: 60px;
+    margin-top: 50px;
     color: rgb(94, 92, 92);
     cursor: pointer;
     position: relative;
@@ -159,6 +169,74 @@ input::-webkit-inner-spin-button {
 .language_button:active{
     background-color: rgb(110, 110, 245);
     transition: none;
+}
+
+#div_animation{
+    position: relative;
+}
+
+#animation_background{
+    background-color: rgb(224, 219, 219);
+    width: 362px;
+    height: 30px;
+    margin-bottom: 5px;
+    color: rgb(102, 101, 101);
+    margin-left: 83px;
+}
+
+#ani_1{
+    font-size: 20px;
+    color: rgb(23, 23, 230);
+    display: inline-block;
+    animation: ani_1 4s 1;
+    animation-delay: 1s;
+    position: absolute;
+    left: 92px;
+    top: -2px;
+}
+
+#ani_2{
+    background-color: rgb(23, 23, 230);
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    margin: 0px 8px 0px 8px;
+    border-radius: 50px;
+    animation: ani_2 4s 1;
+    animation-delay: 1s;
+    position: absolute;
+    left: 316px;
+    top: 10px;
+}
+
+#ani_3{
+    font-size: 18px;
+    color: rgb(23, 23, 230);
+    display: inline-block;
+    animation: ani_3 4s 1;
+    animation-delay: 1s;
+    position: absolute;
+    right: 90px;
+    top: 1px;
+}
+
+@keyframes ani_1{
+    0%{left: 0px; top: 0px;}
+    100%{left: 92px; top: -2px;}
+}
+
+@keyframes ani_2{
+    0%{top: 0px; left: 316;}
+    20%{top: 10px; left: 316px;}
+    40%{top: -5px; left: 316px;}
+    60%{top: 10px; left: 316px;}
+    80%{top: -5px; left: 316px;}
+    100%{top: 10px; left: 316px;}
+}
+
+@keyframes ani_3{
+    0%{right: 0px; top: 1px;}
+    100%{right: 90px; top: 1px;}
 }
 
 
@@ -209,6 +287,10 @@ input::-webkit-inner-spin-button {
 
 /* Design for the game_page */
 
+#h1_in_game_page{
+    animation: blink 3s infinite;
+}
+
 #sudoku{
     display: inline-block;
     vertical-align: bottom;
@@ -218,6 +300,7 @@ input::-webkit-inner-spin-button {
 table{
     border-collapse: collapse;
     margin: auto;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.288);
 }
 
 td{
@@ -282,6 +365,7 @@ td{
     margin-left: 10px;
     margin-right: 10px;
     border-radius: 10px;
+    position: relative;
 }
 
 #hint_header, #mobyle_hint_header{
@@ -312,6 +396,9 @@ td{
     font-weight: 600;
 }
 
+#animate__zoomIn{
+    position: absolute;
+}
 
 #eror_header , #mobyle_eror_header{
     vertical-align: bottom;
@@ -371,7 +458,7 @@ td{
 
     h1{
         font-size: 65px;
-        line-height: 55px;
+        line-height: 45px;
         padding-bottom: 20px;
     }
 
@@ -400,6 +487,39 @@ td{
     #Lets_go_button{
         width: 257px;
         margin-left: 5px;
+    }
+
+    #animation_background{
+        width: 257px;
+        height: 60px;
+        margin-left: 25px;
+        margin-top: 30px;
+        
+    }
+
+    #ani_1{
+        left: 45px;
+        top: 4px;
+    }
+
+    #ani_2{
+        display: none;
+    }
+
+    #ani_3{
+        top: 30px;
+        right: 95px;
+    }
+
+    @keyframes ani_1{
+        0%{left: 0px; top: 4px;}
+        100%{left: 45px; top: 4px;}
+    }
+    
+    
+    @keyframes ani_3{
+        0%{right: 0px; top: 30px;}
+        100%{right: 95px; top: 30px;}
     }
 
     /* Design for the selection page  */
@@ -433,6 +553,10 @@ td{
     #h1_in_game_page{
         margin-bottom: 2px;
         padding-bottom: 0;
+    }
+
+    #sudoku{
+        margin-top: 20px;
     }
 
     td{
