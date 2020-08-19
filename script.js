@@ -55,7 +55,7 @@ function playing_in_english() {
     document.getElementById('mobyle_hint_button').innerHTML = 'hint';
     document.getElementById('mobyle_left_p').innerHTML = 'You have <span id="mobyle_left_span"></span> hints left';
     document.getElementById('again_button').innerHTML = 'new game';
-    document.getElementById('finnish_button').innerHTML = 'finnish';
+    document.getElementById('finnish_button').innerHTML = 'finish';
     document.getElementById('eror_header').innerHTML = 'oops';
     document.getElementById('eror_p').innerHTML = 'You did not succeed this time,<br> try your luck again.';
     document.getElementById('eror_h4').innerHTML = 'You made <span id="eror_span"></span> mistakes';
