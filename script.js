@@ -22,6 +22,7 @@ function playing_in_english() {
         document.getElementById('username_error').innerHTML = 'Invalid username, please try again.';
         document.getElementById('username_error').style.textAlign = 'left';
     }
+
     if (document.getElementById('password_error').innerHTML == 'סיסמה לא תקינה, תנסה שוב בבקשה.') {
         document.getElementById('password_error').innerHTML = 'Invalid password, please try again.';
         document.getElementById('password_error').style.textAlign = 'left';
@@ -86,6 +87,7 @@ function playing_in_hebrew() {
         document.getElementById('username_error').innerHTML = 'שם משתמש לא תקין, תנסה שוב בבקשה.';
         document.getElementById('username_error').style.textAlign = 'right';
     }
+    
     if (document.getElementById('password_error').innerHTML == 'Invalid password, please try again.') {
         document.getElementById('password_error').innerHTML = 'סיסמה לא תקינה, תנסה שוב בבקשה.';
         document.getElementById('password_error').style.textAlign = 'right';
