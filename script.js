@@ -1,10 +1,12 @@
-
+alert("username : ABCD \n password : 1234");
 // Script for the landing page
 
 let eng_or_heb = 'eng';
 
 // Makes the game in English
 function playing_in_english() {
+
+    alert("username : ABCD \n password : 1234");
 
     eng_or_heb = 'eng';
 
@@ -17,7 +19,7 @@ function playing_in_english() {
     document.getElementById('div_password').innerHTML = 'Please enter your password';
     document.getElementById('password').placeholder = 'password';
     document.getElementById('Lets_go_button').innerHTML = "Let's go";
-    
+
     if (document.getElementById('username_error').innerHTML == 'שם משתמש לא תקין, תנסה שוב בבקשה.') {
         document.getElementById('username_error').innerHTML = 'Invalid username, please try again.';
         document.getElementById('username_error').style.textAlign = 'left';
@@ -71,6 +73,8 @@ function playing_in_english() {
 // Makes the game in Hebrew
 function playing_in_hebrew() {
 
+    alert("שם משתמש : ABCD \n סיסמה : 1234");
+
     eng_or_heb = 'heb';
 
     // First page
@@ -87,7 +91,7 @@ function playing_in_hebrew() {
         document.getElementById('username_error').innerHTML = 'שם משתמש לא תקין, תנסה שוב בבקשה.';
         document.getElementById('username_error').style.textAlign = 'right';
     }
-    
+
     if (document.getElementById('password_error').innerHTML == 'Invalid password, please try again.') {
         document.getElementById('password_error').innerHTML = 'סיסמה לא תקינה, תנסה שוב בבקשה.';
         document.getElementById('password_error').style.textAlign = 'right';
@@ -135,7 +139,7 @@ function playing_in_hebrew() {
 
 //Checks if login information is correct and Moves to the selection page
 function landing_page() {
-    
+
     let user = document.getElementById('username').value;
     let pass = document.getElementById('password').value;
     document.getElementById('username_error').innerHTML = '';
@@ -189,19 +193,19 @@ function language_buttons_display_none() {
 
 // Allows to write only one number without zero
 function input_value(a) {
-  
-    if(a.value == 0){
+
+    if (a.value == 0) {
         a.value = '';
     }
 
     if (a.value.length > 1) {
 
-        if (a.value.charAt(1)==0) {
+        if (a.value.charAt(1) == 0) {
 
-            a.value = a.value.slice(0,1)
+            a.value = a.value.slice(0, 1)
         }
 
-        else{
+        else {
 
             a.value = a.value.slice(1)
         }
@@ -211,52 +215,52 @@ function input_value(a) {
 
 
 let sudoku = [
-    [9,5,7,6,1,3,2,8,4],
-    [4,8,3,2,5,7,1,9,6],
-    [6,1,2,8,4,9,5,3,7],
-    [1,7,8,3,6,4,9,5,2],
-    [5,2,4,9,7,1,3,6,8],
-    [3,6,9,5,2,8,7,4,1],
-    [8,4,5,7,9,2,6,1,3],
-    [2,9,1,4,3,6,8,7,5],
-    [7,3,6,1,8,5,4,2,9]
+    [9, 5, 7, 6, 1, 3, 2, 8, 4],
+    [4, 8, 3, 2, 5, 7, 1, 9, 6],
+    [6, 1, 2, 8, 4, 9, 5, 3, 7],
+    [1, 7, 8, 3, 6, 4, 9, 5, 2],
+    [5, 2, 4, 9, 7, 1, 3, 6, 8],
+    [3, 6, 9, 5, 2, 8, 7, 4, 1],
+    [8, 4, 5, 7, 9, 2, 6, 1, 3],
+    [2, 9, 1, 4, 3, 6, 8, 7, 5],
+    [7, 3, 6, 1, 8, 5, 4, 2, 9]
 ];
 
 let new_sudoku = [
-    [0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0]
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0]
 ];
 
 // create a new sudoku
 function create_a_new_sudoku() {
 
     let Used_numbers = '';
-    
+
     for (let i = 1; i <= 9; i++) {
 
-        let rand_num = Math.floor(Math.random() * (10 - 1)) +1;
+        let rand_num = Math.floor(Math.random() * (10 - 1)) + 1;
 
         if (Used_numbers.indexOf(rand_num) != -1) {
             i--
         }
 
-        else{
+        else {
 
             for (let j = 0; j < 9; j++) {
 
                 for (let y = 0; y < 9; y++) {
-    
-                    if (sudoku[j][y]==i) {
 
-                        new_sudoku[j][y]=rand_num;
-                        Used_numbers+=rand_num;
+                    if (sudoku[j][y] == i) {
+
+                        new_sudoku[j][y] = rand_num;
+                        Used_numbers += rand_num;
                     }
                 }
             }
@@ -268,8 +272,8 @@ function create_a_new_sudoku() {
 
         for (let z = 0; z < 9; z++) {
 
-            document.getElementById(`input_${x+1}_${z+1}`).value = new_sudoku[x][z];
-            document.getElementById(`input_${x+1}_${z+1}`).style.backgroundColor = 'rgb(255, 255, 255)'
+            document.getElementById(`input_${x + 1}_${z + 1}`).value = new_sudoku[x][z];
+            document.getElementById(`input_${x + 1}_${z + 1}`).style.backgroundColor = 'rgb(255, 255, 255)'
         }
     }
 }
@@ -277,20 +281,20 @@ create_a_new_sudoku()
 
 // Moves to the game page and Deletes some of the sudoku
 function Delete_sudoku(value) {
-    
+
     // Moves to the game page
     document.getElementById('selection_page').style.display = 'none';
     document.getElementById('game_page').style.display = 'block';
 
     // Deletes some of the sudoku
     for (let i = 0; i < value; i++) {
-        let rand_num_1 = Math.floor(Math.random() * (10 - 1)) +1;
-        let rand_num_2 = Math.floor(Math.random() * (10 - 1)) +1;
+        let rand_num_1 = Math.floor(Math.random() * (10 - 1)) + 1;
+        let rand_num_2 = Math.floor(Math.random() * (10 - 1)) + 1;
 
         if (document.getElementById(`input_${rand_num_1}_${rand_num_2}`).value == '') {
             i--
         }
-        else{
+        else {
             document.getElementById(`input_${rand_num_1}_${rand_num_2}`).value = '';
         }
     }
@@ -299,7 +303,7 @@ function Delete_sudoku(value) {
     for (let x = 1; x <= 9; x++) {
 
         for (let y = 1; y <= 9; y++) {
-            
+
             if (document.getElementById(`input_${x}_${y}`).value != '') {
 
                 document.getElementById(`input_${x}_${y}`).style.color = 'rgb(94, 92, 92)';
@@ -311,19 +315,19 @@ function Delete_sudoku(value) {
     }
 
     // Inserts how much times will be able to use with the hint
-    if (value=='30') {
+    if (value == '30') {
         document.getElementById('hint_span').innerHTML = '4';
         document.getElementById('mobyle_hint_span').innerHTML = '4';
         document.getElementById('hint_left_span').innerHTML = '4';
         document.getElementById('mobyle_left_span').innerHTML = '4';
     }
-    else if (value=='40') {
+    else if (value == '40') {
         document.getElementById('hint_span').innerHTML = '6';
         document.getElementById('mobyle_hint_span').innerHTML = '6';
         document.getElementById('hint_left_span').innerHTML = '6';
         document.getElementById('mobyle_left_span').innerHTML = '6';
     }
-    else{
+    else {
         document.getElementById('hint_span').innerHTML = '8';
         document.getElementById('mobyle_hint_span').innerHTML = '8';
         document.getElementById('hint_left_span').innerHTML = '8';
@@ -332,30 +336,30 @@ function Delete_sudoku(value) {
 }
 
 // Selects a random location and confesses that it is empty and adds value there
-function hint() { 
+function hint() {
 
     // Checks if it is more than 0
     if (document.getElementById('hint_left_span').innerHTML > 0) {
 
         // Makes the counter 1 less
-        document.getElementById('hint_left_span').innerHTML --;
-        document.getElementById('mobyle_left_span').innerHTML -- ;
+        document.getElementById('hint_left_span').innerHTML--;
+        document.getElementById('mobyle_left_span').innerHTML--;
 
         // Looking for an empty location
         for (let i = 0; i < 1; i++) {
-            let rand_num_1 = Math.floor(Math.random() * (10 - 1)) +1;
-            let rand_num_2 = Math.floor(Math.random() * (10 - 1)) +1;
-    
+            let rand_num_1 = Math.floor(Math.random() * (10 - 1)) + 1;
+            let rand_num_2 = Math.floor(Math.random() * (10 - 1)) + 1;
+
             if (document.getElementById(`input_${rand_num_1}_${rand_num_2}`).value != '') {
                 i--;
             }
-            else{
-                document.getElementById(`input_${rand_num_1}_${rand_num_2}`).value = new_sudoku[rand_num_1-1][rand_num_2-1];
+            else {
+                document.getElementById(`input_${rand_num_1}_${rand_num_2}`).value = new_sudoku[rand_num_1 - 1][rand_num_2 - 1];
                 document.getElementById(`input_${rand_num_1}_${rand_num_2}`).style.color = 'rgb(94, 92, 92)';
                 document.getElementById(`input_${rand_num_1}_${rand_num_2}`).style.backgroundColor = 'rgb(240, 240, 241)';
                 document.getElementById(`input_${rand_num_1}_${rand_num_2}`).readOnly = true;
             }
-        }        
+        }
     }
 }
 
@@ -413,7 +417,7 @@ function finnish() {
             }
         }
     }
-            
+
     chack_row()
     chack_col()
     chack_box()
@@ -422,7 +426,7 @@ function finnish() {
         document.getElementById('Success_Message').style.display = 'block';
         document.getElementById('mobyle_success_message').style.display = 'block';
     }
-    else{
+    else {
         document.getElementById('Error_Message').style.display = 'block';
         document.getElementById('mobyle_error_message').style.display = 'block';
         document.getElementById('eror_span').innerHTML = error_counter;
@@ -434,35 +438,35 @@ function finnish() {
 // Checks the rows if they contain all the numbers
 function chack_row() {
 
-   let counter_row = 0;
-    
+    let counter_row = 0;
+
     // Takes the numbers along with their location and inserts them as an object into the array
     for (let i = 1; i <= 9; i++) {
-        
+
         let row = [];
 
         for (let j = 1; j <= 9; j++) {
-    
-            row.push({number:parseInt(document.getElementById(`input_${i}_${j}`).value) , index:`input_${i}_${j}`});
-        }        
+
+            row.push({ number: parseInt(document.getElementById(`input_${i}_${j}`).value), index: `input_${i}_${j}` });
+        }
 
         // Enter each number individually into the array to check if it exists twice
         for (let y = 1; y <= 9; y++) {
-            
+
             let row_num = []
 
             for (let n = 0; n < 9; n++) {
-                
+
                 if (row[n].number == y) {
                     row_num.push(row[n]);
                 }
-                
-            }  
+
+            }
 
             // If he finds a number more than once he paints the non-original in red
-            if (row_num.length > 1 ) {
+            if (row_num.length > 1) {
 
-                for (let c = 0; c < row_num.length ; c++) {
+                for (let c = 0; c < row_num.length; c++) {
 
                     if (document.getElementById(`${row_num[c].index}`).style.backgroundColor == 'rgb(255, 255, 255)') {
                         document.getElementById(`${row_num[c].index}`).style.backgroundColor = 'rgba(255, 0, 0, 0.15)';
@@ -471,8 +475,8 @@ function chack_row() {
                     }
                 }
             }
-            else if(row_num.length == 1 ){
-                counter_row ++;
+            else if (row_num.length == 1) {
+                counter_row++;
             }
         }
     }
@@ -481,7 +485,7 @@ function chack_row() {
     if (counter_row == 81) {
         return true
     }
-    else{
+    else {
         return false
     }
 }
@@ -494,31 +498,31 @@ function chack_col() {
 
     // Takes the numbers along with their location and inserts them as an object into the array
     for (let i = 1; i <= 9; i++) {
-        
+
         let col = [];
 
         for (let j = 1; j <= 9; j++) {
-    
-            col.push({number:parseInt(document.getElementById(`input_${j}_${i}`).value) , index:`input_${j}_${i}`});
+
+            col.push({ number: parseInt(document.getElementById(`input_${j}_${i}`).value), index: `input_${j}_${i}` });
         }
 
         // Enter each number individually into the array to check if it exists twice
         for (let y = 1; y <= 9; y++) {
-            
+
             let col_num = []
 
             for (let n = 0; n < 9; n++) {
-                
+
                 if (col[n].number == y) {
                     col_num.push(col[n]);
                 }
-                
-            }  
+
+            }
 
             // If he finds a number more than once he paints the non-original in red
-            if (col_num.length > 1 ) {
+            if (col_num.length > 1) {
 
-                for (let c = 0; c < col_num.length ; c++) {
+                for (let c = 0; c < col_num.length; c++) {
 
                     if (document.getElementById(`${col_num[c].index}`).style.backgroundColor == 'rgb(255, 255, 255)') {
                         document.getElementById(`${col_num[c].index}`).style.backgroundColor = 'rgba(255, 0, 0, 0.15)';
@@ -528,16 +532,16 @@ function chack_col() {
                 }
             }
             else if (col_num.length == 1) {
-                counter_col ++;
+                counter_col++;
             }
         }
     }
-    
+
     // If all goes well he returns truth
     if (counter_col == 81) {
         return true
     }
-    else{
+    else {
         return false
     }
 }
@@ -546,7 +550,7 @@ function chack_col() {
 function chack_box() {
 
     let counter_box = 0;
-    
+
     // Takes the numbers along with their location and inserts them as an object into the array
     // Because it is a box I needed 4 loops Because each loop ran 3 times
     let start1 = 1;
@@ -560,34 +564,34 @@ function chack_box() {
         for (let ii = 1; ii <= 3; ii++) {
 
             let box = [];
-            
+
             for (let j = start1; j <= stop1; j++) {
-            
+
                 for (let y = start2; y <= stop2; y++) {
-                    
-                    box.push({number:parseInt(document.getElementById(`input_${j}_${y}`).value) ,index:`input_${j}_${y}`});
+
+                    box.push({ number: parseInt(document.getElementById(`input_${j}_${y}`).value), index: `input_${j}_${y}` });
                 }
             }
 
 
             // Enter each number individually into the array to check if it exists twice
             for (let n = 1; n <= 9; n++) {
-                
+
                 let box_num = [];
 
                 for (let nn = 0; nn < 9; nn++) {
-                
+
                     if (box[nn].number == n) {
-                        
+
                         box_num.push(box[nn])
                     }
-                }  
+                }
 
                 // If he finds a number more than once he paints the non-original in red
                 if (box_num.length > 1) {
-                
-                    for (let c = 0; c <box_num.length; c++) {
-                        
+
+                    for (let c = 0; c < box_num.length; c++) {
+
                         if (document.getElementById(`${box_num[c].index}`).style.backgroundColor == 'rgb(255, 255, 255)') {
                             document.getElementById(`${box_num[c].index}`).style.backgroundColor = 'rgba(255, 0, 0, 0.15)';
                             document.getElementById(`${box_num[c].index}`).style.color = 'red';
@@ -596,7 +600,7 @@ function chack_box() {
                     }
                 }
                 else if (box_num.length == 1) {
-                    counter_box ++;
+                    counter_box++;
                 }
             }
 
@@ -612,7 +616,7 @@ function chack_box() {
     if (counter_box == 81) {
         return true
     }
-    else{
+    else {
         return false
     }
 
